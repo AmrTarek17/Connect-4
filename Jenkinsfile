@@ -4,7 +4,7 @@ pipeline {
     environment {
         OLD_TAG="1.0"
         NEW_TAG="1.0"
-        IMG_NAME="amrtarek6/connect4:1.0"
+        IMG_NAME="amrtarek6/connect4"
     }
 
     stages {
