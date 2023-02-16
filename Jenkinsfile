@@ -13,11 +13,8 @@ pipeline {
                 echo 'Building Docker image...'
                 catchError {
                     sh "docker rmi -f ${IMG_NAME}:${OLD_TAG}"
-                } 
-                sh "cd src"
-                sh "pwd"
-                sh "ls"                  
-                sh "docker build -t ${IMG_NAME}:${NEW_TAG} ."
+                }                  
+                sh "docker build -f src/Dockerfile -t ${IMG_NAME}:${NEW_TAG} ./src"
            }
        }
        
