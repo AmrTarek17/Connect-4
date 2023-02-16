@@ -1,3 +1,4 @@
+cat << EOF | kubectl apply -f-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -14,6 +15,7 @@ spec:
     spec:
       containers:
       - name: game-container
-        image: amrtarek6/connect4:1.0
+        image: ${IMG_NAME}:${NEW_TAG}
         ports:
         - containerPort: 80
+EOF

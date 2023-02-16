@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         OLD_TAG="1.0"
-        NEW_TAG="1.0"
+        NEW_TAG="1.1"
         IMG_NAME="amrtarek6/connect4"
     }
 
@@ -32,7 +32,7 @@ pipeline {
            steps {
                script {
                     echo 'deploying image on kubernetes cluster....'
-
+                    sh "sudo chmod +x ./k8s/deployment.sh && ./k8s/deployment.sh"
                     sh "kubectl apply -f ./K8s"
                 
                     
