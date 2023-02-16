@@ -14,7 +14,9 @@ pipeline {
                 catchError {
                     sh "docker rmi -f ${IMG_NAME}:${OLD_TAG}"
                 } 
-                sh "cd src"                  
+                sh "cd src"
+                sh "pwd"
+                sh "ls"                  
                 sh "docker build -t ${IMG_NAME}:${NEW_TAG} ."
            }
        }
