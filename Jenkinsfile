@@ -32,7 +32,7 @@ pipeline {
            steps {
                script {
                     echo 'deploying image on kubernetes cluster....'
-                    sh "sudo chmod +x ./k8s/deployment.sh && ./k8s/deployment.sh"
+                    sh "sudo chmod +x ./K8s/deployment.sh && ./K8s/deployment.sh"
                     sh "kubectl apply -f ./K8s"
                 
                     
